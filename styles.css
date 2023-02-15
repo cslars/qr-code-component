@@ -6,6 +6,15 @@
   color: hsl(228, 45%, 44%);
 }
 
+/* css variables */
+
+:root {
+  --color-white: hsl(0, 0%, 100%);
+  --color-light-gray: hsl(212, 45%, 89%);
+  --color-grayish-blue: hsl(220, 15%, 55%);
+  --color-dark-blue: hsl(218, 44%, 22%);
+}
+
 /* css reset */
 
 html {
@@ -20,7 +29,7 @@ html {
 }
 
 body {
-  background-color: hsl(212, 45%, 89%);
+  background-color: var(--color-light-gray);
   font-family: Outfit, sans-serif;
 }
 
@@ -36,15 +45,18 @@ body {
 }
 
 .qr-card {
-  background-color: hsl(0, 0%, 100%);
+  background-color: var(--color-white);
   padding: 2rem;
-  border-radius: 15px;
+  border-radius: 2rem;
+  /* pulled from https://cssgenerator.org/box-shadow-css-generator.html */
+  box-shadow: -1px 5px 30px -12px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: -1px 5px 30px -12px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: -1px 5px 30px -12px rgba(0, 0, 0, 0.2);
 }
 
 .qr-card__code {
   display: block;
   width: 100%;
-  margin: 0 auto;
 }
 
 .qr-card__text {
@@ -54,11 +66,13 @@ body {
 
 .qr-card__text h1 {
   font-size: 2.5rem;
-  color: hsl(218, 44%, 22%);
+  color: var(--color-dark-blue);
 }
 
 .qr-card__text p {
-  margin-top: 1rem;
+  padding: 0 1.5rem;
+  margin-top: 1.5rem;
   font-size: 1.5rem;
-  color: hsl(220, 15%, 55%);
+  line-height: 1.5;
+  color: var(--color-grayish-blue);
 }
